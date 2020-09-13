@@ -25,6 +25,7 @@ describe('[Button]', () => {
     root = rendered.root;
 
     const texts = root.findAllByType(Text);
+
     expect(texts).toHaveLength(0);
   });
 
@@ -33,6 +34,7 @@ describe('[Button]', () => {
     root = rendered.root;
 
     const texts = root.findAllByType(Text);
+
     expect(texts).toHaveLength(1);
   });
 
@@ -43,11 +45,13 @@ describe('[Button]', () => {
     root = rendered.root;
 
     const texts = root.findAllByType(Text);
+
     expect(texts).toHaveLength(3);
   });
 
   describe('[Button] Interaction', () => {
     let cnt = 1;
+
     it('simulate onPress', () => {
       rendered = renderer.create(
         component({

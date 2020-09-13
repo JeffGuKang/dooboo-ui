@@ -30,6 +30,7 @@ describe('[Checkbox]', () => {
     const rendered: renderer.ReactTestRendererJSON | null = renderer
       .create(component(props))
       .toJSON();
+
     expect(rendered).toMatchSnapshot();
   });
 
@@ -44,6 +45,7 @@ describe('[Checkbox]', () => {
       );
 
       const checkboxClick = rendered.root.findByType(TouchableHighlight);
+
       renderer.act(() => {
         checkboxClick.props.onPress();
       });
@@ -160,6 +162,7 @@ describe('[CheckboxGroup] render test', () => {
         disabled: false,
       };
     });
+
     groupProps = createTestProps({
       options: checkboxGroupDataDisabled,
     });
@@ -177,6 +180,7 @@ describe('[CheckboxGroup] render test', () => {
         customStyle: {},
       };
     });
+
     groupProps = createTestProps({
       options: checkboxGroupDataCustom,
     });
@@ -218,6 +222,7 @@ describe('[CheckboxGroup] render test', () => {
     };
 
     const onChangeMock = jest.fn();
+
     groupProps = createTestProps({
       options: checkboxGroupData,
       values: defaultCheckedList,
@@ -226,6 +231,7 @@ describe('[CheckboxGroup] render test', () => {
 
     const rendered = renderer.create(component(groupProps));
     const checkboxClick = rendered.root.findAllByType(TouchableHighlight);
+
     renderer.act(() => {
       checkboxClick[1].props.onPress();
     });
